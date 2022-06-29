@@ -10,7 +10,7 @@ collections:
     label: "Config"
     delete: false
     editor:
-      preview: false
+      preview: true
     files:
       - name: "general"
         label: "Site Config"
@@ -87,6 +87,20 @@ collections:
                 name: "name"
                 widget: "string"
                 hint: "Tag name for displaying on the site"
+      - name: "categories"
+        label: "Categories"
+        file: "meta/categories.yml"
+        description: "List of Categories"
+        fields:
+          - name: categories
+            label: Categories
+            label_singular: "Category"
+            widget: list
+            fields: 
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "Category name for displaying on the site"
 
   - name: "posts"
     label: "Posts"
@@ -138,4 +152,10 @@ collections:
           valueField: "tags.*.slug"
       - label: "Body"
         name: "body"
+        widget: "markdown"
+      - label: "Recipe Ingredients"
+        name: "recipe-ingredients"
+        widget: "markdown"
+      - label: "Recipe Instructions"
+        name: "recipe-instructions"
         widget: "markdown"

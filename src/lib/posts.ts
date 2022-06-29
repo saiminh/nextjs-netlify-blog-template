@@ -22,7 +22,7 @@ export function fetchPostContent(): PostContent[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
-    .filter((it) => it.endsWith(".mdx"))
+    .filter((it) => it.endsWith(".mdx") || it.endsWith(".md"))
     .map((fileName) => {
       // Read markdown file as string
       const fullPath = path.join(postsDirectory, fileName);
@@ -42,14 +42,15 @@ export function fetchPostContent(): PostContent[] {
         fullPath: string,
       };
       matterData.fullPath = fullPath;
-
+      
       const slug = fileName.replace(/\.mdx$/, "");
-
+      
       // Validate slug string
       if (matterData.slug !== slug) {
-        throw new Error(
-          "slug field not match with the path of its content source"
-        );
+        // throw new Error(
+          //   "slug field not match with the path of its content source"
+          // );
+        matterData.slug = fileName.replace(/\.mdx$/, "");
       }
 
       return matterData;

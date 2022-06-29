@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../public/styles/content.module.css";
-import Author from "./Author";
 import Copyright from "./Copyright";
 import Date from "./Date";
 import Layout from "./Layout";
@@ -10,7 +9,6 @@ import OpenGraphMeta from "./meta/OpenGraphMeta";
 import TwitterCardMeta from "./meta/TwitterCardMeta";
 import { SocialList } from "./SocialList";
 import TagButton from "./TagButton";
-import { getAuthor } from "../lib/authors";
 import { getTag } from "../lib/tags";
 
 type Props = {
@@ -18,21 +16,22 @@ type Props = {
   date: Date;
   slug: string;
   tags: string[];
-  author: string;
   description?: string;
+  ingredients: string;
+  instructions: string;
   children: React.ReactNode;
 };
 export default function PostLayout({
   title,
   date,
   slug,
-  author,
   tags,
   description = "",
+  ingredients,
+  instructions,
   children,
 }: Props) {
   const keywords = tags.map(it => getTag(it).name);
-  const authorName = getAuthor(author).name;
   return (
     <Layout>
       <BasicMeta
@@ -56,24 +55,22 @@ export default function PostLayout({
         title={title}
         keywords={keywords}
         date={date}
-        author={authorName}
         description={description}
       />
       <div className={"container"}>
         <article>
           <header>
-            <div className="annoyer">Heyey</div>
             <h1>{title}</h1>
             <div className={"metadata"}>
               <div>
                 <Date date={date} />
               </div>
-              <div>
-                <Author author={getAuthor(author)} />
-              </div>
             </div>
           </header>
           <div className={styles.content}>{children}</div>
+          <div className={styles.ingredients} dangerouslySetInnerHTML={{__html: ingredients}}></div>
+          <h2>Instructions:</h2>
+          <div className={styles.instructions} dangerouslySetInnerHTML={{__html: instructions}}></div>
           <ul className={"tag-list"}>
             {tags.map((it, i) => (
               <li key={i}>
@@ -91,9 +88,6 @@ export default function PostLayout({
       </div>
       <style jsx>
         {`
-            .annoyer { 
-              background: red;
-            }
             .container {
               display: block;
               max-width: 36rem;

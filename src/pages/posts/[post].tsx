@@ -18,8 +18,9 @@ export type Props = {
   dateString: string;
   slug: string;
   tags: string[];
-  author: string;
   description?: string;
+  ingredients?: string;
+  instructions?: string;
   source: MdxRemote.Source;
 };
 
@@ -35,8 +36,9 @@ export default function Post({
   dateString,
   slug,
   tags,
-  author,
   description = "",
+  ingredients = "",
+  instructions = "",
   source,
 }: Props) {
   const content = hydrate(source, { components })
@@ -46,8 +48,9 @@ export default function Post({
       date={parseISO(dateString)}
       slug={slug}
       tags={tags}
-      author={author}
       description={description}
+      ingredients={ingredients}
+      instructions={instructions}
     >
       {content}
     </PostLayout>
@@ -69,14 +72,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
   const mdxSource = await renderToString(content, { components, scope: data });
+  const mdxIngredients = data.ingredients ? data.ingredients : "";
+  const mdxInstructions = data.instructions ? data.instructions.split("\n").join('</p><p>') : '';
+  const postSlug = data.slug ? data.slug : params.post as string;
+
   return {
     props: {
       title: data.title,
       dateString: data.date,
-      slug: data.slug,
+      slug: postSlug,
       description: "",
+      ingredients: mdxIngredients,
+      instructions: mdxInstructions,
       tags: data.tags,
-      author: data.author,
       source: mdxSource
     },
   };

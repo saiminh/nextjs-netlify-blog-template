@@ -11,3 +11,291 @@ tags:
     name: mdx
   - slug: markdown
     name: markdown
+  - slug: acupuncture
+    name: Acupuncture
+  - slug: almond
+    name: Almond
+  - slug: apple
+    name: Apple
+  - slug: asian
+    name: Asian
+  - slug: autumn
+    name: Autumn
+  - slug: avocado
+    name: Avocado
+  - slug: ayurveda
+    name: Ayurveda
+  - slug: baking
+    name: Baking
+  - slug: banana
+    name: Banana
+  - slug: beans
+    name: Beans
+  - slug: beetroot
+    name: Beetroot
+  - slug: berries
+    name: Berries
+  - slug: bitters
+    name: bitters
+  - slug: black-beans
+    name: Black beans
+  - slug: bowl
+    name: Bowl
+  - slug: breakfast
+    name: Breakfast
+  - slug: broccoli
+    name: Broccoli
+  - slug: buckwheat
+    name: Buckwheat
+  - slug: cabbage
+    name: Cabbage
+  - slug: cacao
+    name: Cacao
+  - slug: carob
+    name: Carob
+  - slug: carrot
+    name: Carrot
+  - slug: cashews
+    name: Cashews
+  - slug: cauliflower
+    name: Cauliflower
+  - slug: cavolo-nero
+    name: Cavolo nero
+  - slug: celery
+    name: Celery
+  - slug: cereal
+    name: Cereal
+  - slug: cheese
+    name: Cheese
+  - slug: chocolate
+    name: Chocolate
+  - slug: cinnamon
+    name: Cinnamon
+  - slug: citrus
+    name: Citrus
+  - slug: clove
+    name: Clove
+  - slug: coconut
+    name: Coconut
+  - slug: coffee
+    name: Coffee
+  - slug: condiment
+    name: Condiment
+  - slug: cookies
+    name: Cookies
+  - slug: covid19
+    name: covid19
+  - slug: cucumber
+    name: Cucumber
+  - slug: curry
+    name: Curry
+  - slug: dairy
+    name: Dairy
+  - slug: dairy-free
+    name: Dairy-free
+  - slug: dessert
+    name: Dessert
+  - slug: digestion
+    name: Digestion
+  - slug: dill
+    name: Dill
+  - slug: dinner
+    name: Dinner
+  - slug: dip
+    name: Dip
+  - slug: drink
+    name: Drink
+  - slug: dysbiosis
+    name: Dysbiosis
+  - slug: dysmenorrhea
+    name: Dysmenorrhea
+  - slug: eggs
+    name: Eggs
+  - slug: fermented
+    name: Fermented
+  - slug: fish
+    name: Fish
+  - slug: fmt
+    name: FMT
+  - slug: fodmaps
+    name: FODMAPs
+  - slug: fritters
+    name: Fritters
+  - slug: fruit
+    name: Fruit
+  - slug: garlic
+    name: Garlic
+  - slug: garnish
+    name: Garnish
+  - slug: gelatin
+    name: Gelatin
+  - slug: gelatine
+    name: Gelatine
+  - slug: gluten-free
+    name: Gluten-free
+  - slug: green-beans
+    name: Green beans
+  - slug: grounding
+    name: grounding
+  - slug: gut-health
+    name: Gut health
+  - slug: hormones
+    name: hormones
+  - slug: hypoallergenic
+    name: Hypoallergenic
+  - slug: ibs
+    name: IBS
+  - slug: immunity
+    name: immunity
+  - slug: indian
+    name: Indian
+  - slug: intolerances
+    name: Intolerances
+  - slug: japanese
+    name: Japanese
+  - slug: lactose-free
+    name: Lactose-free
+  - slug: leek
+    name: Leek
+  - slug: lentils
+    name: Lentils
+  - slug: light
+    name: Light
+  - slug: low-fodmap
+    name: Low-FODMAP
+  - slug: lunch
+    name: Lunch
+  - slug: mango
+    name: Mango
+  - slug: meditation
+    name: Meditation
+  - slug: menstruation
+    name: Menstruation
+  - slug: mexican
+    name: Mexican
+  - slug: mint
+    name: Mint
+  - slug: mushrooms
+    name: Mushrooms
+  - slug: nuts
+    name: Nuts
+  - slug: oats
+    name: Oats
+  - slug: oestrogen-dominance
+    name: Oestrogen dominance
+  - slug: one-pot-meal
+    name: One-pot meal
+  - slug: orange
+    name: Orange
+  - slug: parsnip
+    name: Parsnip
+  - slug: pasta
+    name: Pasta
+  - slug: peace
+    name: peace
+  - slug: peanut
+    name: Peanut
+  - slug: pear
+    name: Pear
+  - slug: peppermint
+    name: Peppermint
+  - slug: period-pain
+    name: Period pain
+  - slug: pescatarian
+    name: Pescatarian
+  - slug: pickles
+    name: Pickles
+  - slug: porridge
+    name: Porridge
+  - slug: potato
+    name: Potato
+  - slug: probiotics
+    name: Probiotics
+  - slug: pumpkin
+    name: Pumpkin
+  - slug: quick
+    name: Quick
+  - slug: raisins
+    name: Raisins
+  - slug: raspberry
+    name: Raspberry
+  - slug: refined-sugar-free
+    name: Refined sugar-free
+  - slug: relaxation
+    name: relaxation
+  - slug: rest
+    name: rest
+  - slug: restorative-yoga
+    name: Restorative Yoga
+  - slug: rituals
+    name: rituals
+  - slug: rosemary
+    name: Rosemary
+  - slug: salad
+    name: Salad
+  - slug: salsify
+    name: Salsify
+  - slug: sauerkraut
+    name: Sauerkraut
+  - slug: scd
+    name: SCD
+  - slug: seasonal
+    name: Seasonal
+  - slug: seasonal-food
+    name: Seasonal food
+  - slug: seeds
+    name: seeds
+  - slug: self-care
+    name: Self-care
+  - slug: sibo
+    name: SIBO
+  - slug: slow-cooker
+    name: Slow cooker
+  - slug: snack
+    name: Snack
+  - slug: sneaky-vege-smoothie
+    name: Sneaky Vege Smoothie
+  - slug: sneaky-veggie-smoothie
+    name: Sneaky Veggie Smoothie
+  - slug: soup
+    name: Soup
+  - slug: spicy
+    name: Spicy
+  - slug: spinach
+    name: Spinach
+  - slug: spring
+    name: Spring
+  - slug: sprouts
+    name: Sprouts
+  - slug: summer
+    name: Summer
+  - slug: sweet
+    name: Sweet
+  - slug: sweet-potato
+    name: Sweet potato
+  - slug: sweetcorn
+    name: Sweetcorn
+  - slug: tomato
+    name: Tomato
+  - slug: topping
+    name: Topping
+  - slug: traditional-chinese-medicine
+    name: Traditional Chinese Medicine
+  - slug: treat
+    name: Treat
+  - slug: tuna
+    name: Tuna
+  - slug: vegan
+    name: Vegan
+  - slug: vegetarian
+    name: Vegetarian
+  - slug: winter
+    name: Winter
+  - slug: womens-health
+    name: Women's health
+  - slug: yoga
+    name: yoga
+  - slug: yoghurt
+    name: Yoghurt
+  - slug: zucchini
+    name: Zucchini
