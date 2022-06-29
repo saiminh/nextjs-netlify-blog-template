@@ -69,7 +69,7 @@ export default function PostLayout({
           </header>
           <div className={styles.content}>{children}</div>
           <div className={styles.ingredients} dangerouslySetInnerHTML={{__html: ingredients}}></div>
-          <h2>Instructions:</h2>
+          { instructions ? <h2>Instructions:</h2> : '' } 
           <div className={styles.instructions} dangerouslySetInnerHTML={{__html: instructions}}></div>
           <ul className={"tag-list"}>
             {tags.map((it, i) => (

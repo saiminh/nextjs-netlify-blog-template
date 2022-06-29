@@ -75,6 +75,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxIngredients = data.ingredients ? data.ingredients : "";
   const mdxInstructions = data.instructions ? data.instructions.split("\n").join('</p><p>') : '';
   const postSlug = data.slug ? data.slug : params.post as string;
+  const postTags = data.tags ? data.tags : [];
 
   return {
     props: {
@@ -84,7 +85,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       description: "",
       ingredients: mdxIngredients,
       instructions: mdxInstructions,
-      tags: data.tags,
+      tags: postTags,
       source: mdxSource
     },
   };
