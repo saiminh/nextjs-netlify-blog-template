@@ -62,6 +62,7 @@ export default function PostLayout({
       <div className={"container"}>
         <article>
           <header>
+            <div className="annoyer">Heyey</div>
             <h1>{title}</h1>
             <div className={"metadata"}>
               <div>
@@ -90,6 +91,9 @@ export default function PostLayout({
       </div>
       <style jsx>
         {`
+            .annoyer { 
+              background: red;
+            }
             .container {
               display: block;
               max-width: 36rem;
