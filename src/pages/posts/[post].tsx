@@ -1,13 +1,17 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import renderToString from "next-mdx-remote/render-to-string";
-import { MdxRemote } from "next-mdx-remote/types";
-import hydrate from "next-mdx-remote/hydrate";
+// import renderToString from "next-mdx-remote/render-to-string";
+import { serialize } from 'next-mdx-remote/serialize'
+// import { MdxRemote } from "next-mdx-remote/dist/types";
+// import hydrate from "next-mdx-remote/hydrate";
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import matter from "gray-matter";
 import { fetchPostContent } from "../../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
 import PostLayout from "../../components/PostLayout";
+
+import showdown from "showdown";
 
 import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
@@ -21,10 +25,10 @@ export type Props = {
   description?: string;
   ingredients?: string;
   instructions?: string;
-  source: MdxRemote.Source;
+  source: MDXRemoteSerializeResult;
 };
 
-const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
+const components = {  };
 const slugToPostContent = (postContents => {
   let hash = {}
   postContents.forEach(it => hash[it.slug] = it)
@@ -41,8 +45,9 @@ export default function Post({
   instructions = "",
   source,
 }: Props) {
-  const content = hydrate(source, { components })
+  // const content = hydrate(source, { components })
   return (
+    
     <PostLayout
       title={title}
       date={parseISO(dateString)}
@@ -52,7 +57,7 @@ export default function Post({
       ingredients={ingredients}
       instructions={instructions}
     >
-      {content}
+      <MDXRemote {...source} components={components} />
     </PostLayout>
   )
 }
@@ -71,9 +76,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
-  const mdxSource = await renderToString(content, { components, scope: data });
-  const mdxIngredients = data.ingredients ? data.ingredients : "";
-  const mdxInstructions = data.instructions ? data.instructions.split("\n").join('</p><p>') : '';
+  // const mdxSource = await renderToString(content, { components, scope: data });
+  const mdxSource = await serialize(content);
+  // const mdxIngredients = data.ingredients ? data.ingredients : "";
+  // const mdxInstructions = data.instructions ? await serialize(data.instructions) : '';
+  // showdown.setOption('simpleLineBreaks', 'true');
+  const converter = new showdown.Converter(),
+        ingredientsText      = data.ingredients ? data.ingredients : "",
+        mdxIngredientsHtml   = converter.makeHtml(ingredientsText),
+        instructionsText      = data.instructions ? data.instructions.replace(/\n/gi, '\n\n') : "",
+        mdxInstructionsHtml   = converter.makeHtml(instructionsText);
   const postSlug = data.slug ? data.slug : params.post as string;
   const postTags = data.tags ? data.tags : [];
 
@@ -83,8 +95,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       dateString: data.date,
       slug: postSlug,
       description: "",
-      ingredients: mdxIngredients,
-      instructions: mdxInstructions,
+      ingredients: mdxIngredientsHtml,
+      instructions: mdxInstructionsHtml,
       tags: postTags,
       source: mdxSource
     },
